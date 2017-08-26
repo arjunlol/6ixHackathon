@@ -11,19 +11,18 @@ module.exports = (text, cb) => {
   var parameters = {
     'text': text,
     'features': {
-      'entities': {
-        'emotion': true,
-        'sentiment': true,
-        'limit': 2
+      'emotion': {
       },
-      'keywords': {
-        'emotion': true,
-        'sentiment': true,
-        'limit': 2
+      'sentiment': {
       }
     }
   }
 
-  nlu.analyze(parameters, cb(err, response))
+  nlu.analyze(parameters, function(err, response) {
+  if (err)
+    cb(err);
+  else
+    cb(JSON.stringify(response, null, 2));
+  });
 }
 

@@ -6,12 +6,9 @@ const watson  = require("./watson.js");
 module.exports = (knex) => {
 
   router.post("/", (req, res) => {
-    let text = req.params.text
-    watson(text, (err, response) => {
-       if (err)
-         console.log('error:', err);
-       else
-         console.log(JSON.stringify(response, null, 2));
+    let text = 'IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.'
+    watson(text, (response) => {
+      console.log(response)
     });
   });
 
