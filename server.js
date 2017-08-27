@@ -97,7 +97,8 @@ app.post("/api/analyze", (req, res) => {
         writer_id: req.session.userID,
         text: text,
         tone_response: responseTone,
-        insight_response: responsePerson
+        insight_response: responsePerson,
+        created_at: new Date
       }).then((test) => {
         console.log('data went in?', test)
       })
