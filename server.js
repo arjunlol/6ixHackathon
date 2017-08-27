@@ -14,7 +14,7 @@ const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 const session     = require('express-session');
-const bcrypt      = require('bcrypt');
+const bcrypt      = require('bcryptjs');
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
