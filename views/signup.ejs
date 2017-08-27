@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup ~ Stockr Finance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
+  </head>
+  <body>
+
+    <nav class="navbar ">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <strong>Stockr</strong>
+        </a>
+
+        <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+          <span class="icon" style="color: #333;">
+            <i class="fa fa-github"></i>
+          </span>
+        </a>
+
+        <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+          <span class="icon" style="color: #55acee;">
+            <i class="fa fa-twitter"></i>
+          </span>
+        </a>
+
+        <div class="navbar-burger burger" data-target="navMenuTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenuTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link  is-active" href="/documentation/overview/start/">
+              Trending
+            </a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item " href="/documentation/overview/start/">
+                Overview
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/modifiers/syntax/">
+                Modifiers
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/grid/columns/">
+                Grid
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/layout/container/">
+                Layout
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/form/general/">
+                Form
+              </a>
+              <a class="navbar-item " href="http://bulma.io/documentation/elements/box/">
+                Elements
+              </a>
+
+                <a class="navbar-item is-active" href="http://bulma.io/documentation/components/breadcrumb/">
+                  Components
+                </a>
+
+              <hr class="navbar-divider">
+              <div class="navbar-item">
+                <div>
+                  <p class="is-size-6-desktop">
+                    <strong class="has-text-info">0.5.0</strong>
+                  </p>
+
+                    <small>
+                      <a class="view-all-versions" href="/versions">View all versions</a>
+                    </small>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item is-hidden-desktop-only" href="/blog">
+            Blog
+          </a>
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a href="/login" class="tw-button button">Login</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          Sign up to begin your journey to better mental health.
+        </h1>
+        <p class="subtitle">
+          Already a part of the <strong>Therapy</strong> community? Log in <a href="/login">here.</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="columns is-mobile is-centered">
+      <div class="column is-one-quarter-desktop is-two-thirds-mobile is-two-thirds-tablet is-narrow">
+        <form method="post" action="/signingUp">
+          <div class="field">
+            <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="First Name" name="fName" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left">
+              <input class="input" type="text" placeholder="Last Name" name="lName" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="email" placeholder="Email" name="email" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" name="password" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Are you a Counselor" name="counselorOrNot" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-question"></i>
+              </span>
+              <p class="help">Answer in either Yes or No.</p>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Your major" name="major">
+              <span class="icon is-small is-left">
+                <i class="fa fa-graduation-cap"></i>
+              </span>
+              <p class="help">Leave empty if counselor.</p>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Your University Id." name="uni_id">
+              <span class="icon is-small is-left">
+                <i class="fa fa-id-card-o"></i>
+              </span>
+              <p class="help">Leave empty if counselor.</p>
+            </p>
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <input class="button is-primary" type="submit">
+              </input>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <h4>
+            <strong>Therapy</strong>
+          </h4>
+          <p>
+            <a class="icon" href="https://github.com/jgthms/bulma">
+              <i class="fa fa-github"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
