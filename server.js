@@ -87,6 +87,16 @@ app.post("/api/analyze", (req, res) => {
   let text = req.body.text
   watson(text, (responseTone, responsePerson) => {
     // console.log(responseTone, responsePerson)
+    knex('results')
+      .insert({
+        writer_id: req.session.userID,
+        text: text,
+        tone_response: responseTone,
+        insight_response: responsePerson
+      }).then((test) => {
+        console.log('data went in?', test)
+      })
+
     let labels = []
     let data = []
     console.log(JSON.stringify(responseTone.document_tone.tone_categories))
