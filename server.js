@@ -82,7 +82,20 @@ app.get("/chart", (req, res) => {
 
 app.get("/text", (req, res) => {
   if(req.session.userID){
-    res.render("text");
+    knex('users')
+        .select('first_name', 'last_name')
+        .where({
+          users_id: req.session.userID
+        })
+    .then((response)=> {
+      console.log('response', response)
+      var sendToFront = {
+        first_name: response[0].first_name,
+        last_name: response[0].last_name,
+        user: req.session.userID
+      }
+      res.render("text", sendToFront);
+    })
   } else {
     res.send('NOPE.')
   }

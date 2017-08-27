@@ -26,19 +26,19 @@
             <span></span>
             <span></span>
           </span>
-          <div class="nav-right nav-menu">
-            <a href = "home.html" class="nav-item is-active">
-              Home
-            </a>
-            <a href = "input.html" class="nav-item">
-              Write
-            </a>
-            <span class="nav-item">
-              <a class="button is-primary is-inverted">
-                <span>Login</span>
+          <% if (first_name) { %>
+            <a href="/write" class="navbar-item">Write</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link  is-active">
+                <%= first_name %> <%= last_name %>
               </a>
-            </span>
-          </div>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item " href="/logout">
+                  Logout
+                </a>
+              </div>
+            </div>
+          <% }%>
         </div>
       </header>
     </div>
@@ -48,7 +48,7 @@
     <section class="section">
     <div class="container">
       <h1 class="title">
-        Hi, name
+        Hi, <%= first_name %>
       </h1>
       <p class="subtitle">
         Tell <strong>your</strong> story...
