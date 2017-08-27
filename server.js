@@ -16,7 +16,8 @@ const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
-const analyzeRoutes = require("./routes/analyze");
+// const analyzeRoutes = require("./routes/analyze");
+const watson  = require("./watson.js");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -38,12 +39,35 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
-app.use("/api/analyze", analyzeRoutes(knex));
+
 
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("/chart", (req, res) => {
+  res.render("chart");
+});
+
+app.get("/text", (req, res) => {
+  res.render("text");
+});
+
+app.post("/api/analyze", (req, res) => {
+  let text = req.body.text
+  watson(text, (responseTone, responsePerson) => {
+    // console.log(responseTone, responsePerson)
+    console.log(responseTone)
+    let templateVars = {
+      test: responseTone
+    }
+    res.render('chart', templateVars)
+  });
+});
+
+
+
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
