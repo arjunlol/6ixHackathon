@@ -57,9 +57,16 @@ app.post("/api/analyze", (req, res) => {
   let text = req.body.text
   watson(text, (responseTone, responsePerson) => {
     // console.log(responseTone, responsePerson)
-    console.log(responseTone)
+    let labels = []
+    let data = []
+    console.log(JSON.stringify(responseTone.document_tone.tone_categories))
+    responseTone.document_tone.tone_categories[0]['tones'].forEach((tone) => {
+      labels.push(tone['tone_name'])
+      data.push(tone['score']*100)
+    })
     let templateVars = {
-      test: responseTone
+      labels: JSON.stringify(labels),
+      data: JSON.stringify(data)
     }
     res.render('chart', templateVars)
   });

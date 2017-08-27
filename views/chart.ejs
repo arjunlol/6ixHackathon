@@ -15,16 +15,17 @@
 
   <body>
     <h1>CHART!</h1>
+
     <canvas id="myChart" width="400" height="400"></canvas>
     <script>
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels:  <%-labels%>,
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Emotional Analysis by Percentage',
+                data: <%=data %>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
