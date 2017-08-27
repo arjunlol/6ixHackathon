@@ -75,12 +75,17 @@ app.get("/", (req, res) => {
     res.render("index", sendToFront);
   }
 });
+
 app.get("/chart", (req, res) => {
   res.render("chart");
 });
 
 app.get("/text", (req, res) => {
-  res.render("text");
+  if(req.session.userID){
+    res.render("text");
+  } else {
+    res.send('NOPE.')
+  }
 });
 
 app.post("/api/analyze", (req, res) => {
@@ -205,7 +210,7 @@ app.post('/loggingIn', (req, res)=> {
       req.session.userID = response[0].users_id;
       console.log('req.session has been set to', req.session.userID)
       if(response[0].counselor_or_patient === 'No' || response[0].counselor_or_patient === 'no'){
-        res.redirect('/')
+        res.redirect('/text')
       } else {
         res.redirect('/counselorDash')
       }
@@ -225,12 +230,21 @@ app.get('/counselorDash', (req, res)=> {
     .then((response)=> {
       console.log('response', response)
       if (response[0].counselor_or_patient === 'Yes' || response[0].counselor_or_patient === 'yes'){
-        var sendToFront = {
-          first_name: response[0].first_name,
-          last_name: response[0].last_name,
-          user: req.session.userID
-        }
-        res.render('counselorDash', sendToFront)
+        knex('results')
+            .join('users', 'results.writer_id', 'users.users_id')
+            .select('*')
+            .where({
+              counselor_or_patient: 'no'
+            })
+        .then((response)=> {
+          console.log('Here, all info from EVERY user will/should be logged', response)
+          var sendToFront = {
+            first_name: response[0].first_name,
+            last_name: response[0].last_name,
+            user: req.session.userID
+          }
+          res.render('counselorDash', sendToFront)
+        })
       } else {
         res.send('You are not a counselor.')
       }

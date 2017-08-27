@@ -43,27 +43,52 @@
       </header>
     </div>
 
-    <!-- Hero content: will be in the middle -->
-<!--     <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">
-          Therapy
-        </h1>
-        <h2 class="subtitle">
-          Feel better
-        </h2>
-      </div>
-    </div> -->
   </section>
 
-  <div class="textbox">
+    <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hi, name
+      </h1>
+      <p class="subtitle">
+        Tell <strong>your</strong> story...
+      </p>
+    </div>
+  </section>
 
-    <form method="POST" action="/api/analyze">
-      <textarea class="textarea" placeholder="What's on your mind?" rows="10" name="text"></textarea>
-      <input type='submit' class="button primary" value='Submit' id='submit'/>
-    </form>
-
+  <div class="columns">
+    <div class="column is-two-thirds is-offset-2">
+      <form method="post" action="/api/analyze" id="writeForm">
+        <div class="field">
+          <label class="title is-4">Story</label>
+          <div class="control">
+            <textarea class="textarea" name="text" id="Story" rows="7" placeholder="Tell your story here..."></textarea>
+          </div>
+        </div>
+        <div class="field is-grouped is-grouped-right">
+          <p class="control">
+            <input class="button is-primary" type="submit">
+            </input>
+          </p>
+        </div>
+      </form>
+    </div>
   </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <h4>
+            <strong>Therapy</strong>
+          </h4>
+          <p>
+            <a class="icon" href="https://github.com/jgthms/bulma">
+              <i class="fa fa-github"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
 
 
   </body>
