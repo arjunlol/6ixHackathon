@@ -6,6 +6,10 @@
     <title>Signup ~ Stockr Finance</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
+        <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
   </head>
   <body>
 
@@ -103,50 +107,24 @@
       <div class="columns is-multiline">
         <div class="column">
           <div class="box">
-            <div class="heading">Top Seller Total</div>
-            <div class="title">56,950</div>
+            <div class="heading">Personality Needs</div>
+            <div class="title">Tom Riddle</div>
             <div class="level">
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Sales $</div>
-                  <div class="title is-5">250,000</div>
+                  <div class="heading">Closeness </div>
+                  <div class="title is-5">40%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Overall $</div>
-                  <div class="title is-5">750,000</div>
+                  <div class="heading">Excitement </div>
+                  <div class="title is-5">49%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Sales %</div>
-                  <div class="title is-5">25%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="box">
-            <div class="heading">Revenue / Expenses</div>
-            <div class="title">55% / 45%</div>
-            <div class="level">
-              <div class="level-item">
-                <div class="">
-                  <div class="heading">Rev Prod $</div>
-                  <div class="title is-5">30%</div>
-                </div>
-              </div>
-              <div class="level-item">
-                <div class="">
-                  <div class="heading">Rev Serv $</div>
-                  <div class="title is-5">25%</div>
-                </div>
-              </div>
-              <div class="level-item">
-                <div class="">
-                  <div class="heading">Exp %</div>
+                  <div class="heading">Stability </div>
                   <div class="title is-5">45%</div>
                 </div>
               </div>
@@ -155,25 +133,25 @@
         </div>
         <div class="column">
           <div class="box">
-            <div class="heading">Feedback Activity</div>
-            <div class="title">78% &uarr;</div>
+            <div class="heading">Personality Needs</div>
+            <div class="title">Hans Gruber</div>
             <div class="level">
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Positive</div>
-                  <div class="title is-5">1560</div>
+                  <div class="heading">Practicality </div>
+                  <div class="title is-5">63%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Negative</div>
-                  <div class="title is-5">368</div>
+                  <div class="heading">Closeness</div>
+                  <div class="title is-5">54%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Pos/Neg %</div>
-                  <div class="title is-5">77% / 23%</div>
+                  <div class="heading">Challenge %</div>
+                  <div class="title is-5">45%</div>
                 </div>
               </div>
             </div>
@@ -181,25 +159,51 @@
         </div>
         <div class="column">
           <div class="box">
-            <div class="heading">Orders / Returns</div>
-            <div class="title">75% / 25%</div>
+            <div class="heading">Personality Needs</div>
+            <div class="title">John Doe</div>
             <div class="level">
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Orders $</div>
-                  <div class="title is-5">425,000</div>
+                  <div class="heading">Excitement</div>
+                  <div class="title is-5">75%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Returns $</div>
-                  <div class="title is-5">106,250</div>
+                  <div class="heading">Love</div>
+                  <div class="title is-5">65%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Success %</div>
-                  <div class="title is-5">+ 28,5%</div>
+                  <div class="heading">Practicality</div>
+                  <div class="title is-5">53%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <div class="heading">Personality Needs</div>
+            <div class="title">Joe Smith</div>
+            <div class="level">
+              <div class="level-item">
+                <div class="">
+                  <div class="heading">Harmony</div>
+                  <div class="title is-5">64%</div>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="">
+                  <div class="heading">Closeness</div>
+                  <div class="title is-5">59%</div>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="">
+                  <div class="heading">Challenge%</div>
+                  <div class="title is-5">53%</div>
                 </div>
               </div>
             </div>
@@ -211,11 +215,102 @@
         <div class="column is-6">
           <div class="panel">
             <p class="panel-heading">
-              Expenses: Daily - $700
+              Tom Riddle
             </p>
             <div class="panel-block">
               <figure class="image is-16x9">
-                <img src="https://placehold.it/1280x720">
+                <canvas id="myChart" width="400" height="400"></canvas>
+                <script>
+                var ctx = document.getElementById("myChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels:  ['Anger', 'Joy', 'Fear', 'Disgust'],
+                        datasets: [{
+                            label: 'Emotional Analysis by Percentage',
+                            data: [11.51,22.38,49.21,34.80],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+                </script>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="panel">
+            <p class="panel-heading">
+              Hans Gruber
+            </p>
+            <div class="panel-block">
+              <figure class="image is-16x9">
+                  <canvas id="myChart2" width="400" height="400"></canvas>
+                <script>
+                var ctx = document.getElementById("myChart2").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels:  ['Anger', 'Joy', 'Fear', 'Disgust'],
+                        datasets: [{
+                            label: 'Emotional Analysis by Percentage',
+                            data: [8.51,38.33,10.56,14.80],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+                </script>
               </figure>
             </div>
           </div>
@@ -223,35 +318,102 @@
         <div class="column is-6">
           <div class="panel">
             <p class="panel-heading">
-              Refunds: Daily - $200
+              John Doe
             </p>
             <div class="panel-block">
               <figure class="image is-16x9">
-                <img src="https://placehold.it/1280x720">
+                  <canvas id="myChart3" width="400" height="400"></canvas>
+                <script>
+                var ctx = document.getElementById("myChart3").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels:  ['Anger', 'Joy', 'Fear', 'Disgust'],
+                        datasets: [{
+                            label: 'Emotional Analysis by Percentage',
+                            data: [11.51,22.38,.21,34.83],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+                </script>
               </figure>
             </div>
           </div>
         </div>
+
         <div class="column is-6">
           <div class="panel">
             <p class="panel-heading">
-              Something
+              Joe Smith
             </p>
             <div class="panel-block">
               <figure class="image is-16x9">
-                <img src="https://placehold.it/1280x720">
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div class="column is-6">
-          <div class="panel">
-            <p class="panel-heading">
-              Something Else
-            </p>
-            <div class="panel-block">
-              <figure class="image is-16x9">
-                <img src="https://placehold.it/1280x720">
+                  <canvas id="myChart4" width="400" height="400"></canvas>
+                <script>
+                var ctx = document.getElementById("myChart4").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels:  ['Anger', 'Joy', 'Fear', 'Disgust'],
+                        datasets: [{
+                            label: 'Emotional Analysis by Percentage',
+                            data: [81.51,3.38,15.21,4.80],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+                </script>
               </figure>
             </div>
           </div>

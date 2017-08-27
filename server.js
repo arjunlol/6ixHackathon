@@ -261,11 +261,12 @@ app.get('/counselorDash', (req, res)=> {
               counselor_or_patient: 'no'
             })
         .then((response)=> {
-          console.log('Here, all info from EVERY user will/should be logged', response)
+          console.log('Here, all info from EVERY user will/should be logged', response[0].tone_response)
+          console.log('HERE PERSONALITY', response[0].insight_response)
           var sendToFront = {
             first_name: response[0].first_name,
             last_name: response[0].last_name,
-            user: req.session.userID
+            response: response
           }
           res.render('counselorDash', sendToFront)
         })
