@@ -1,3 +1,6 @@
+https://devpost.com/software/myndjournal-0ky6t5
+
+
 # Node Skeleton
 
 ## Project Setup
