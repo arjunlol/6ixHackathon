@@ -1,21 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Home Page</title>
-
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyndJournal!</title>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css">
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
 
   <body>
-  <% if (!user) { %>
-    <h1>Hello World!! Signup <a href="/signup">here</a> OR Login <a href="/login">here.</a></h1>
-  <%} else {%>
-    <h1>Hello <%= name %></h1>
-  <% } %>
+
+  <section class="hero is-primary is-medium">
+    <!-- Hero header: will stick at the top -->
+    <div class="hero-head">
+      <header class="nav">
+        <div class="container">
+          <div class="nav-left">
+            <a class="nav-item">
+              <strong>MyndJournal </strong>
+              <img src="https://i.pinimg.com/originals/c5/51/46/c5514665b2b4ebea629c915279242a8d.png" alt="Logo" href="home.htmls">
+            </a>
+          </div>
+          <span class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <% if (name) { %>
+            <a href="/write" class="navbar-item">Write</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link  is-active">
+                <%= name %>
+              </a>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item " href="/logout">
+                  Logout
+                </a>
+              </div>
+            </div>
+          <% } else {%>
+            <a href="/login" class="navbar-item">Login</a>
+            <a href="/signup" class="navbar-item">Signup</a>
+          <% } %>
+        </div>
+      </header>
+    </div>
+
+  </section>
+
+<section class="hero is-info is-medium">
+  <div id="particles-js">
+  <span>
+
+
+  </span>
+  </div>
+</section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">MyndJournal</h1>
+      <p class="subtitle has-text-centered">
+        MydJournal is an online therapy tool that helps people take the first step towards improving their mental health through a journal. Using IBM's Watson, therapists can get graphical insights into the current state of their patients. Our system analyzes the journal and allows patients to keep their sensitive information confidential.
+      </p>
+    </div>
+  </section>
+
+<hr style="margin-right: 15%; margin-left: 15%;">
+
+
+ <h1 class="title has-text-centered">Already a member? Log in down below!</h1>
+
+
+    <div class="columns is-mobile is-centered">
+      <div class="column is-one-quarter is-narrow">
+        <form method="post" action="/loggingIn">
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" name="email" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" name="password" required>
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field is-grouped is-grouped-right">
+            <p class="control">
+              <input class="button is-primary" type="submit">
+              </input>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+<br>
+<br>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <h4>
+            <strong>MyndJournal</strong>
+          </h4>
+          <p>
+            <a class="icon" href="https://github.com/jgthms/bulma">
+              <i class="fa fa-github"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  <script type="text/javascript">particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 380,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});</script>
   </body>
 </html>

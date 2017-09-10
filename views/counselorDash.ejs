@@ -16,7 +16,7 @@
     <nav class="navbar is-primary">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <strong>Therapy</strong>
+          <strong>MyndJournal</strong>
         </a>
 
 
@@ -29,14 +29,11 @@
 
       <div id="navMenuTransparentExample" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item is-hidden-desktop-only" href="/blog">
-            Blog
-          </a>
+
           <% if (first_name) { %>
-            <a href="/write" class="navbar-item">Write</a>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link  is-active">
-                <%= first_name %> <%= last_name %>
+                Janine Robb
               </a>
               <div class="navbar-dropdown is-boxed">
                 <a class="navbar-item " href="/logout">
@@ -69,12 +66,22 @@
               <li><a>Tom Riddle</a></li>
               <li><a>Hans Gruber</a></li>
               <li><a>John Doe</a></li>
-              <li><a>Joe Smith</a></li>
+              <li><a>Test2 Test2</a></li>
+              <li><a>See More Patients</a></li>
             </ul>
           </li>
-          <li><a>Invitations</a></li>
-          <li><a>Cloud Storage Environment Settings</a></li>
-          <li><a>Authentication</a></li>
+          <li>
+            <a class="">Courses</a>
+            <ul>
+              <li><a>PHY 294</a></li>
+              <li><a>CSC 265</a></li>
+              <li><a>PHL 345</a></li>
+              <li><a>ECO 100</a></li>
+              <li><a>See More Courses</a></li>
+            </ul>
+          </li>
+          <li><a>Connect to Counselors</a></li>
+          <li><a>Connect to Patients</a></li>
         </ul>
       </nav>
     </aside>
@@ -89,7 +96,7 @@
         <div class="level-right">
           <div class="level-item">
             <button type="button" class="button is-small">
-              March 8, 2017 - April 6, 2017
+              <%= date %>
             </button>
           </div>
         </div>
@@ -98,7 +105,7 @@
       <div class="columns is-multiline">
         <div class="column">
           <div class="box">
-            <div class="heading">Personality Needs</div>
+            <div class="heading">Personality Insights</div>
             <div class="title">Tom Riddle</div>
             <div class="level">
               <div class="level-item">
@@ -124,7 +131,7 @@
         </div>
         <div class="column">
           <div class="box">
-            <div class="heading">Personality Needs</div>
+            <div class="heading">Personality Insights</div>
             <div class="title">Hans Gruber</div>
             <div class="level">
               <div class="level-item">
@@ -135,13 +142,13 @@
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Closeness</div>
+                  <div class="heading">Closeness </div>
                   <div class="title is-5">54%</div>
                 </div>
               </div>
               <div class="level-item">
                 <div class="">
-                  <div class="heading">Challenge %</div>
+                  <div class="heading">Challenge</div>
                   <div class="title is-5">45%</div>
                 </div>
               </div>
@@ -150,7 +157,7 @@
         </div>
         <div class="column">
           <div class="box">
-            <div class="heading">Personality Needs</div>
+            <div class="heading">Personality Insights</div>
             <div class="title">John Doe</div>
             <div class="level">
               <div class="level-item">
@@ -176,8 +183,8 @@
         </div>
         <div class="column">
           <div class="box">
-            <div class="heading">Personality Needs</div>
-            <div class="title">Joe Smith</div>
+            <div class="heading">Personality Insights</div>
+            <div class="title">Test2 Test2</div>
             <div class="level">
               <div class="level-item">
                 <div class="">
@@ -361,7 +368,7 @@
         <div class="column is-6">
           <div class="panel">
             <p class="panel-heading">
-              Joe Smith
+              Test2 Test2
             </p>
             <div class="panel-block">
               <figure class="image is-16x9">

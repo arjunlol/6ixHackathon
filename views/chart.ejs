@@ -1,61 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Chart Page</title>
-
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
   </head>
-
   <body>
-    <h1>CHART!</h1>
-
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels:  <%-labels%>,
-            datasets: [{
-                label: 'Emotional Analysis by Percentage',
-                data: <%=data %>,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
-    });
-    </script>
+     <section class="hero is-primary is-medium">
+       <!-- Hero header: will stick at the top -->
+       <div class="hero-head">
+         <header class="nav">
+           <div class="container">
+             <div class="nav-left">
+               <a class="nav-item">
+                 <img src="https://i.pinimg.com/originals/c5/51/46/c5514665b2b4ebea629c915279242a8d.png" alt="Logo" href="home.htmls">
+               </a>
+             </div>
+             <span class="nav-toggle">
+               <span></span>
+               <span></span>
+               <span></span>
+             </span>
+             <% if (name) { %>
+               <a href="/write" class="navbar-item">Write</a>
+               <div class="navbar-item has-dropdown is-hoverable">
+                 <a class="navbar-link  is-active">
+                   <%= name %>
+                 </a>
+                 <div class="navbar-dropdown is-boxed">
+                   <a class="navbar-item " href="/logout">
+                     Logout
+                   </a>
+                 </div>
+               </div>
+             <% }%>
+           </div>
+         </header>
+       </div>
+     </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="title">
+          Great work today, <%= name %>!
+        </h2>
+        <p class="subtitle">
+          Seems like you're having a busy day.
+        </p>
+      </div>
+    </section>
+    <section class="section">
+    <div class="container">
+      <p class="subtitle">
+        You sound like you're having a busy day! I can tell because of the number of things you mention and because you're typing seems rushed. I can also tell you're enjoying what you do, and that's great! Keep doing what you're doing! If you ever feel stressed out by the amount of thing s you're working on, then the following links and articles should help!
+      </p>
+      <br>
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child box">
+                <a href="https://www.narcity.com/ca/on/toronto/things-to-do-in-to/7-unique-places-to-de-stress-in-toronto">
+                  <p class="title">7 Unique Places To De-Stress In Toronto</p>
+                  <p class="subtitle">Stop, Drop and Chill.</p>
+                </a>
+              </article>
+              <article class="tile is-child box">
+                <a href="https://www.entrepreneur.com/article/229813">
+                  <p class="title">The 80/20 Rule of Time Management: Stop Wasting Your Time</p>
+                </a>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <a href="https://www.health.harvard.edu/heart-health/5-ways-to-de-stress-and-help-your-heart">
+                  <p class="title">5 ways to de-stress and help your heart</p>
+                  <figure class="image is-4by3">
+                    <img src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/bigstock-stress-reduction-concept--rel-81234536.jpg">
+                  </figure>
+                </a>
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <a href="https://www.theodysseyonline.com/itslittlethingslife">
+                <p class="title">Why It's Important To Enjoy The Little Things In Life</p>
+              </a>
+                <div class="content">
+                  In high school, I was a person who worried about everything. I was always putting homework first, working hard to make sure my GPA was high enough and I was always looking for more extracurricular activities and volunteer...
+                </div>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <a href="http://www.ucl.ac.uk/student-psychological-services/other-resources/ExamAnxiety">
+              <div class="content">
+                <p class="title">Coping With Exam Anxiety</p>
+            </a>
+            <br>
+                <div class="content">
+                  The key to reducing anxiety is to make an early start with your revision. Six weeks should be enough for end of year exams, depending on how many you have, and where you are at in your studies. Take enough time to do yourself justice. Remember revision is just that - it's about seeing something again and refreshing your knowledge. It's not about new work. If you have worked at a steady pace throughout the year, revision will be relatively straightforward. If you have less than six weeks available to you be realistic about what you can do.
+                </div>
+              </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
   </body>
 </html>
-

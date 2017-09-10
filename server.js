@@ -125,7 +125,8 @@ app.post("/api/analyze", (req, res) => {
     })
     let templateVars = {
       labels: JSON.stringify(labels),
-      data: JSON.stringify(data)
+      data: JSON.stringify(data),
+      name: 'Test2 Test2'
     }
     res.render('chart', templateVars)
   });
@@ -263,10 +264,12 @@ app.get('/counselorDash', (req, res)=> {
         .then((response)=> {
           console.log('Here, all info from EVERY user will/should be logged', response[0].tone_response)
           console.log('HERE PERSONALITY', response[0].insight_response)
+          var date = new Date();
           var sendToFront = {
             first_name: response[0].first_name,
             last_name: response[0].last_name,
-            response: response
+            response: response,
+            date: date.toDateString()
           }
           res.render('counselorDash', sendToFront)
         })

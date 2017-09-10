@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chart Page</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
+  </head>
+
+  <body>
+     <section class="hero is-primary is-medium">
+    <!-- Hero header: will stick at the top -->
+    <div class="hero-head">
+      <header class="nav">
+        <div class="container">
+          <div class="nav-left">
+            <a class="nav-item">
+              <strong>MyndJournal </strong>
+              <img src="https://i.pinimg.com/originals/c5/51/46/c5514665b2b4ebea629c915279242a8d.png" alt="Logo" href="home.htmls">
+            </a>
+          </div>
+          <span class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <% if (name) { %>
+            <a href="/write" class="navbar-item">Write</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link  is-active">
+                <%= name %>
+              </a>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item " href="/logout">
+                  Logout
+                </a>
+              </div>
+            </div>
+          <% } else {%>
+            <a href="/login" class="navbar-item">Login</a>
+            <a href="/signup" class="navbar-item">Signup</a>
+          <% } %>
+        </div>
+      </header>
+    </div>
+
+  </section>
+
+    <canvas id="myChart" width="300px" height="300px"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels:  <%-labels%>,
+            datasets: [{
+                label: 'Emotional Analysis by Percentage',
+                data: <%=data %>,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+  </body>
+</html>
+
